@@ -6,7 +6,7 @@ Ex: Indira
 ## Step2:
 Based on the techer selection we can find the list of courses which is assign to the teacher.
 Ex: English 
-## Step3: 
+## Step3:
 After Selection of course click on Submit button.
 Then we can get the student list 
 Ex:
