@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="StudentRegistration">   
+
+	<select id="getTeachers" resultType="map">
+		
+	  select id as teacherId,teachername as teacherName from  ai.teacher_mst 
+			ORDER BY teacherId;
+	</select>
+	
+    <select id="getCourse" parameterType="map" resultType="StudentRegistration">
+	
+      select  a.id as courseid,b.coursename from
+		(select regexp_split_to_table(courseid,',') id from ai.teacher_mst where id = #{teacherid}) a
+		inner join
+		( select * from ai.course_mst ) b on (a.id::int = b.id) ORDER BY b.coursename;	
+	</select>
+	
+	<select id="getStudentData" parameterType="map" resultType="map">
+		select * from ai.student_registration where teacherid =#{p.teacherid}::character varying and coursesid=#{p.courseid}::character varying;
+
+	</select>
+	      
+</mapper>                           

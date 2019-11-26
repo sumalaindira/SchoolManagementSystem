@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+	
+		
+		<typeAlias alias="StudentRegistration" type="in.school.model.StudentRegistration" />
+	
+	
+	
+			   
+		
+	</typeAliases>
+
+	<mappers>
+		
+		<mapper resource="in/school/security/model/College_MyBatis.xml" />
+	
+		
+	</mappers>
+</configuration>   
